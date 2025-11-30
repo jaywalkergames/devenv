@@ -6,16 +6,10 @@ My development environment setup.
 Install: https://learn.microsoft.com/en-us/windows/wsl/install
 
 Setup:
-1. `sudo apt update`
-2. `sudo apt install -y build-essential gcc g++ make gdb clang lldb clang-format clang-tidy cmake ninja-build pkg-config git curl unzip zip libpq-dev python3-dev`
-3. `sudo add-apt-repository ppa:deadsnakes/ppa`
-4. `sudo apt update`
-5. `sudo apt install -y python3.13 python3.13-venv python3.13-dev python3-pip python3.13-distutils`
-6. `mkdir ~/.venvs`
-7. `curl -s "https://get.sdkman.io" | bash` && open new shell
-8. `sdk install java 25-tem`
-9. `sdk install gradle`
-10. `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash` && open new shell
+- java: `curl -s "https://get.sdkman.io" | bash` && open new shell
+- javascript: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash` && open new shell
+- python: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+- rust:  `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 
 ### Docker
@@ -23,20 +17,16 @@ Install: https://docs.docker.com/desktop/wsl/
 
 
 ### Neovim
-X
+1. Install [neovim](https://neovim.io/doc/install/)
+2. Install [config](https://github.com/jaywalkergames/kickstart.nvim)
 
 
 
 ## Language Environments
 
 
-
-### C++
-Set in CMakeLists.txt
-
-
 ### Java
-Install: `sdk install java 25-tem`
+Install: `sdk install java 25-tem` && `sdk install gradle`
 Remove: `sdk uninstall java 25-tem`
 Check Version: `sdk current java`
 Change Version: `sdk use java 25-tem`
@@ -50,7 +40,11 @@ Change Version: `nvm use node`
 
 
 ### Python
-Create: `python3.13 -m venv ~/.venvs/myenv`
-Activate: `source ~/.venvs/myenv/bin/activate`
-Deactivate: `deactivate`
-Remove: `rm -rf ~/.venvs/myenv`
+Install: `uv python install 3.12`
+Activate: `uv sync`
+Update uv: `uv self update`
+
+
+### Rust
+Check Version: `rustc --version` && `cargo --version`
+Update Version: `rustup update`
